@@ -1,0 +1,32 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "recipe application about food",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Antonio I.I.",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "@parcel/transformer-svgo": "^2.0.0-nightly.1739",
+    "parcel": "^2.12.0",
+    "svgo": "^3.3.2"
+  },
+  "dependencies": {
+    "core-js": "^3.38.1",
+    "fracty": "^1.0.11",
+    "regenerator-runtime": "^0.14.1",
+    "sass": "^1.79.5"
+  },
+  "svgo": {
+    "plugins": [
+      {
+        "name": "preset-default"
+      },
+      "cleanupIDs"
+    ]
+  }
+}
