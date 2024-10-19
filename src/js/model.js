@@ -14,7 +14,7 @@ export const state = {
   bookmarks: [], // bookmarked = stores the recipe into the bookmarks
 };
 
-createRecipeObject = function (data) {
+const createRecipeObject = function (data) {
   const { recipe } = data.data;
   return {
     // where id: data.data.recipe.id
