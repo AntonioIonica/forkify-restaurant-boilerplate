@@ -1,7 +1,8 @@
-import icons from 'url:../../img/icons.svg'; // parcel 2; url:
+import icons from 'url:../../img/icons.svg';
 
+// MVC View model class to extend all the other views as addRecipeView and every project functionality
 export default class View {
-  _data;
+  _data; // private var
 
   /**
    * Render the received object to the DOM
@@ -12,6 +13,7 @@ export default class View {
    * @author Antonio I.I.
    * @todo Finish implementation
    */
+
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();

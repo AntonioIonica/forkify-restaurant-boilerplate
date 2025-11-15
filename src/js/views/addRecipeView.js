@@ -1,5 +1,4 @@
 import View from './View.js';
-import icons from 'url:../../img/icons.svg'; // parcel 2; url:
 
 class AddRecipeView extends View {
   _parentEl = document.querySelector('.upload');
@@ -42,7 +41,7 @@ class AddRecipeView extends View {
     });
   }
 
-  _generateMarkup() {}
+  _generateMarkup() { }
 }
 
 export default new AddRecipeView();

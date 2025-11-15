@@ -1,6 +1,4 @@
-import { async } from 'regenerator-runtime';
 import { API_URL, RES_PER_PAGE, KEY } from './config.js';
-// import { getJSON, sendJSON } from './helpers.js';
 import { AJAX } from './helpers.js';
 
 export const state = {
@@ -17,7 +15,6 @@ export const state = {
 const createRecipeObject = function (data) {
   const { recipe } = data.data;
   return {
-    // where id: data.data.recipe.id
     id: recipe.id,
     title: recipe.title,
     publisher: recipe.publisher,
@@ -35,10 +32,9 @@ export const loadRecipe = async function (id) {
     const data = await AJAX(`${API_URL}${id}?key=${KEY}`);
     state.recipe = createRecipeObject(data);
 
-    // This will return t/f if there is and bookmark id = current id of recipe
+    // This will return true/false if there is and bookmark id = current id of recipe
     if (state.bookmarks.some(bookmark => bookmark.id === id))
       // stored the recipe into the bookmarks
-      //
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
   } catch (err) {
@@ -88,11 +84,10 @@ export const updateServings = function (newServings) {
 };
 
 const persistBookmarks = function () {
-  // Store state.bookmarks are a string into 'bookmarks'
+  // Store state.bookmarks are a string into 'bookmarks' localStorage
   localStorage.setItem('bookmarks', JSON.stringify(state.bookmarks));
 };
 
-// When we want to add something we pass the whole data as arg
 export const addBookmark = function (recipe) {
   // Add bookmark
   state.bookmarks.push(recipe);
@@ -123,10 +118,10 @@ const init = function () {
 };
 init(); // loading from storage as soon as page loads
 
-// Just for debugging
-const clearBookmarks = function () {
-  localStorage.clear('bookmarks');
-};
+// Just for debugging clearing the bookmarks
+// const clearBookmarks = function () {
+//   localStorage.clear('bookmarks');
+// };
 // clearBookmarks();
 
 // Will make an API call to upload the recipe

@@ -5,7 +5,6 @@ import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import bookmarksView from './views/bookmarksView.js';
 import paginationView from './views/paginationView.js';
-import AddRecipeView from './views/addRecipeView.js';
 
 import 'core-js/stable'; // Polyfilling everything else
 import 'regenerator-runtime/runtime'; //Polyfilling async/await
@@ -19,6 +18,7 @@ if (module.hot) {
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
+    // manually set a recipe id
     // const id = '664c8f193e7aa067e94e8706';
 
     // Guard clause
