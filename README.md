@@ -96,7 +96,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Get a free API Key at [https://forkify-api.herokuapp.com/v2](https://forkify-api.herokuapp.com/v2)
+1. Get a free API Key at [Forkify API](https://forkify-api.herokuapp.com/v2)
 2. Clone the repo
    ```sh
    git clone https://github.com/AntonioIonica/forkify-restaurant-boilerplate
@@ -113,6 +113,10 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
+   ```
+6. Start the project
+   ``` sh
+   npm run start
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
